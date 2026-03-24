@@ -1,0 +1,37 @@
+<main>
+
+    <!--Sorry Irlan, vc nn pediu estilização e nem bons modos, 
+    mas fiquei entediada na aula de um prof e comecei a fazer 
+    sem saber como ia terminar e fivou essa bagunça hahah kkkk*/-->
+
+    <h1 style="text-align: center;">Forninho com alarme de temperatura</h1>
+    <div class="forno">
+        <div class="painelAviso">
+            <p class="temperatura" [style.color]="temperatura() > 80 ? '#FF1D00' : '#CCFF00'">
+
+                {{temperatura()}}°C -
+
+                @if(temperatura()>80){
+                    PERIGO: SUPERAQUECIMENTO!!!
+                } @else{
+                    TEMPERATURA SEGURA
+                }
+
+            </p>
+        </div>
+        <div class="painel2">
+            <div class="vidro">
+
+            </div>
+            <div class="painelBotoes">
+                <div class="temperaturaText">
+                    <p class="temperatura2">{{temperatura()}}°C</p>
+                </div>
+                <div class="botoes">
+                    <button class="botaoMais" (click)="aumentar()">+</button>
+                    <button class="butaoMenos" (click)="diminuir()">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
